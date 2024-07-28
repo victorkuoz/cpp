@@ -1,7 +1,9 @@
+#include <vector>
+
 class BIT {
 public:
     BIT(int n)
-        : n_(n), rangeSum_(vector<int>(n + 1, 0)) {}
+        : n_(n), rangeSum_(std::vector<int>(n + 1, 0)) {}
 
     void update(int x, int delta) {
         while (x <= n_) {
@@ -23,7 +25,7 @@ public:
 
 private:
     int n_;
-    vector<int> rangeSum_;
+    std::vector<int> rangeSum_;
     static inline int lowbit(int x) {
         return x & (-x);
     };
